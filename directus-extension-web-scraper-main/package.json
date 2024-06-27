@@ -1,0 +1,42 @@
+{
+	"name": "web_scraper",
+	"description": "Please enter a description for your extension",
+	"icon": "extension",
+	"version": "0.0.5",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-extension-operation"
+	],
+	"type": "commonjs",
+	"files": [
+		"dist"
+	],
+	"directus:extension": {
+		"type": "operation",
+		"path": {
+			"app": "dist/app.js",
+			"api": "dist/api.js"
+		},
+		"source": {
+			"app": "src/app.ts",
+			"api": "src/api.ts"
+		},
+		"host": "^10.10.0"
+	},
+	"scripts": {
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify",
+		"link": "directus-extension link"
+	},
+	"devDependencies": {
+		"@directus/extensions-sdk": "11.0.8",
+		"@types/node": "^20.14.6",
+		"typescript": "^5.4.5",
+		"vue": "^3.4.29"
+	},
+	"dependencies": {
+		"cheerio": "^1.0.0-rc.12",
+		"playwright": "^1.44.1"
+	}
+}
